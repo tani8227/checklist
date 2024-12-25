@@ -1,6 +1,7 @@
 import express from 'express';
 const port=5000;
 const app=express();
+import path from 'path'
 import routes from './routes/index.js'
 import expressEjsLayouts from 'express-ejs-layouts';
 
@@ -15,7 +16,7 @@ app.set("layout extractStyles", true)
 app.set('layout extractScripts', true);
 // Set view engine and views path
 app.set('view engine', 'ejs');
-app.set('views',  './views');
+app.set('views',   path.join(__dirname, 'views'));
 
 app.use('/', routes);
 
