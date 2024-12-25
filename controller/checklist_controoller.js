@@ -4,9 +4,9 @@ import checkListRules from "../checkListRules.js";
 export const checklist = (req, res) => {
 
  
-  return res.render('checkList',
+  return res.render('checklist',
     {
-      title: "CheckList",
+      title: "checklist",
       data: checkListRules
     })
 }
