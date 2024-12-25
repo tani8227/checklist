@@ -1,10 +1,13 @@
 import express from 'express';
 const port=5000;
 const app=express();
+import { fileURLToPath } from 'url';
 import path from 'path'
 import routes from './routes/index.js'
 import expressEjsLayouts from 'express-ejs-layouts';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('./assets'));
