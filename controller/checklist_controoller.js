@@ -19,18 +19,20 @@ export const addRule = (req, res) => {
   if (ruleKey && ruleValue) {
     // Convert to camelCase
     ruleKey = ruleKey
-        .trim() //remove space
+        .trim() // Remove leading and trailing spaces
         .toLowerCase() // Convert everything to lowercase initially
         .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
             index === 0 ? word.toLowerCase() : word.toUpperCase()
         ) // Capitalize subsequent words
         .replace(/\s+/g, ''); // Remove all spaces
 
-    const newRule = { [ruleKey]: ruleValue };
-   
+    const newRule = { [ruleKey]: ruleValue.trim() }; // Trim ruleValue as well
+    checkListRules.push(newRule);
+    console.log('Rule Added:', newRule);
 }
 
-return res.redirect('back'); 
+   return res.redirect('/checklist'); 
+
 
 }
 
