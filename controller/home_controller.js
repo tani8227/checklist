@@ -1,6 +1,6 @@
 export const homepage = async (req, res) => {
 
-    console.log("home page");
+   
     
     const response = await fetch('http://qa-gb.api.dynamatix.com:3100/api/applications/getApplicationById/67339ae56d5231c1a2c63639',
         {
@@ -18,7 +18,7 @@ export const homepage = async (req, res) => {
                 
                 const newdata=[]
                 newdata.push(data)
-                console.log("home page", data);
+             
           
             return res.render('home',
                 {

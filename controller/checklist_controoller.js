@@ -3,7 +3,7 @@ import checkListRules from "../checkListRules.js";
 // displaying checklist
 export const checklist = (req, res) => {
 
-  // console.log('checklist page', checkListRules);
+ 
   return res.render('checkList',
     {
       title: "CheckList",
@@ -27,8 +27,7 @@ export const addRule = (req, res) => {
         .replace(/\s+/g, ''); // Remove all spaces
 
     const newRule = { [ruleKey]: ruleValue };
-    checkListRules.push(newRule);
-    console.log('Rule Added:', newRule);
+   
 }
 
 return res.redirect('back'); 
@@ -43,12 +42,11 @@ export const deleteRule = (req, res) => {
   // Remove the rule by index 
   if (id) {
     const ruleIndex = checkListRules.findIndex(rule => Object.keys(rule)[0] === id);
-    console.log(ruleIndex);
+   
     if (ruleIndex !== -1) {
       const deletedRule = checkListRules.splice(ruleIndex, 1);
       
-      console.log('Rule Deleted:', deletedRule);
-      console.log('new rule:', checkListRules);
+    
     }
   }
 
