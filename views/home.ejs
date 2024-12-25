@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="/css/home.css">
+<div class="center-container">
+   <h1 class="homehading">Welcome to Home Page!!!</h1>
+   <div class="data-container">
+       <% if (data && data.length > 0) { %>
+           <ul class="data-list">
+               <% data.forEach(item => { %>
+                   <li class="data-item">
+                       <strong>Valuation Fee Paid:</strong> <%= item.isValuationFeePaid %><br>
+                       <strong>UK Resident:</strong> <%= item.isUkResident %><br>
+                       <strong>Risk Rating:</strong> <%= item.riskRating %><br>
+                       <strong>LTV:</strong> <%= item.ltv %>
+                   </li>
+               <% }); %>
+           </ul>
+       <% } else { %>
+           <p>No data found matching the criteria.</p>
+       <% } %>
+   </div>
+</div>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/checklist.css">
+<div class="center-container">
+    <h1 class="homehading">Welcome to Check List!!!</h1>
+
+    <!-- Add New Rule -->
+    <div>
+        <form action="/checklist/addRule" method="POST">
+            <input type="text" name="ruleKey" placeholder="Rule Key" required />
+            <input type="text" name="ruleValue" placeholder="Rule Value" required />
+            <button type="submit">Add Rule</button>
+        </form>
+    </div>
+
+   <!-- Display Rules -->
+    <div class="data-container">
+        <% if (data && data.length > 0) { %>
+            <ul class="data-list">
+                <% data.forEach(item => { %>
+                    <li class="checklist-li">
+                        <div style="display: flex; align-items: baseline; justify-content: flex-start;">
+                            <strong><%= Object.keys(item)[0] %> :</strong>&nbsp;
+                            <%= Object.values(item)[0] %>
+                            <a href="/checklist/delete/<%= Object.keys(item)[0] %>" style="margin-left: 10px;">Delete</a>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No data found matching the criteria.</p>
+        <% } %>
+    </div>
+</div>

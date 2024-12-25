@@ -1,0 +1,68 @@
+/* Center the entire content */
+.center-container {
+    text-align: center; 
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%; 
+   
+}
+
+/* Style the heading */
+.homehading {
+    font-size: 2rem; 
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+/* Style the data container */
+.data-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    margin-top: 20px;
+    background-color: #888;
+}
+
+/* Style the data list */
+.data-list {
+    list-style-type: none; 
+    padding: 0;
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Style each data item */
+.checklist-li {
+    margin-bottom: 15px; 
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    width: 60%; 
+    text-align: center; 
+}
+
+
+/* Optional: Style for the "no data" message */
+.data-container p {
+    color: #888;
+    font-size: 16px;
+    text-align: center; 
+}
+.checklist-li a{
+    display: block;
+    color: #F4511E;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.checklist-li-inner
+{
+    display: "flex";
+    justify-content: "center";
+    align-items: "baseline";
+}
